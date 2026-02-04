@@ -1,14 +1,12 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 exports.handler = async (event) => {
-  // Set CORS headers
   const headers = {
-    'Access-Control-Allow-Origin': '*', // Change to your domain in production
+    'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Allow-Methods': 'POST, OPTIONS'
   };
 
-  // Handle preflight request
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
   }
@@ -22,11 +20,17 @@ exports.handler = async (event) => {
       ui_mode: 'embedded',
       line_items: [
         {
-          price: 'price_1SwsIQFK9IOy1NPqxkHZuUsM', // Replace with your actual Price ID
+          price: 'price_1SwsIQFK9IOy1NPqxkHZuUsM',
           quantity: 1,
         },
       ],
       mode: 'payment',
+      phone_number_collection: {
+        enabled: true,
+      },
+      shipping_address_collection: {
+        allowed_countries: ['AU', 'NZ', 'US', 'GB'], // Add countries you ship to
+      },
       return_url: `https://yourwebsite.com/return?session_id={CHECKOUT_SESSION_ID}`,
     });
 
@@ -43,6 +47,4 @@ exports.handler = async (event) => {
       body: JSON.stringify({ error: error.message })
     };
   }
-
 };
-
