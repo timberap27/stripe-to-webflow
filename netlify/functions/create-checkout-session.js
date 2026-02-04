@@ -29,7 +29,7 @@ exports.handler = async (event) => {
         enabled: true,
       },
       shipping_address_collection: {
-        allowed_countries: ['AU', 'NZ', 'US', 'GB'], // Add countries you ship to
+        allowed_countries: ['AU'], // Add countries you ship to
       },
       return_url: `https://yourwebsite.com/return?session_id={CHECKOUT_SESSION_ID}`,
     });
@@ -48,3 +48,4 @@ exports.handler = async (event) => {
     };
   }
 };
+
