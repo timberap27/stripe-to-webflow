@@ -22,7 +22,7 @@ exports.handler = async (event) => {
       ui_mode: 'embedded',
       line_items: [
         {
-          price: 'price_YOUR_PRICE_ID_HERE', // Replace with your actual Price ID
+          price: 'price_1SwsIQFK9lOy1NPqxkHZuUsM', // Replace with your actual Price ID
           quantity: 1,
         },
       ],
@@ -43,4 +43,5 @@ exports.handler = async (event) => {
       body: JSON.stringify({ error: error.message })
     };
   }
+
 };
