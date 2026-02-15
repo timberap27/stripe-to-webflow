@@ -20,7 +20,7 @@ exports.handler = async (event) => {
       ui_mode: 'embedded',
       line_items: [
         {
-          price: 'price_1SwsIQFK9IOy1NPqxkHZuUsM',
+          price: 'price_1SzfibCxmizfbXmsuIgAIB9q',
           quantity: 1,
         },
       ],
@@ -31,7 +31,7 @@ exports.handler = async (event) => {
       shipping_address_collection: {
         allowed_countries: ['AU'], // Add countries you ship to
       },
-      return_url: `https://yourwebsite.com/return?session_id={CHECKOUT_SESSION_ID}`,
+      return_url: `https://rippasydney.com/return?session_id={CHECKOUT_SESSION_ID}`,
     });
 
     return {
@@ -48,4 +48,5 @@ exports.handler = async (event) => {
     };
   }
 };
+
 
