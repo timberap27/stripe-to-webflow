@@ -20,7 +20,7 @@ exports.handler = async (event) => {
       ui_mode: 'embedded',
       line_items: [
         {
-          price: 'price_1SzfibCxmizfbXmsuIgAIB9q',
+          price: 'price_1TOx4CCxmizfbXmsYQ7b8TOs',
           quantity: 1,
         },
       ],
@@ -48,5 +48,6 @@ exports.handler = async (event) => {
     };
   }
 };
+
 
 
